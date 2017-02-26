@@ -1,0 +1,54 @@
+---
+title: "Testing dynarr 001 (in progressing..)"
+author: "cywhale"
+date: "Feb, 2017"
+output: html_notebook
+
+---
+
+```{r testing increment of species dynamics, echo=TRUE}
+library(data.table)
+library(magrittr)
+library(NanhsiDT)
+library(ggplot2)
+
+source("D:/R/seedling_survival/dynarr/R/dynarr.R") # check your directory
+
+sdl <- copy(compo_sdl_dyna13)
+
+dx <- increment_observ(sdl)
+topx <- dx$incdt[class=="Survival" & times=="2013-01-30", .(spcode,value)] %>% setorder(-value)
+
+ggplot(aes(x=times, y=value), data=dx$incdt[spcode %in% topx[value>=10,]$spcode,]) + facet_wrap(~ spcode, ncol = 3, scales="free") + geom_line(aes(colour=class)) 
+
+```
+
+```{r testing kernel estimation of distribution of births and deaths, echo=TRUE}
+x <- dx$incdt[class=="Dead" & spcode=="total",]$value
+deadistrib <- num_distribx(x)
+hist(deadistrib,50)
+```
+```{r testing dynamic modelling in one iteration}
+file <- "D:/R/seedling_survival/debug/cfg_dyna.txt" ## check your directory
+
+dyna_set <- rassembly_preset(sdl,varname=c("spcode","recruit","recruit_time","dead_time","d_cause"),
+                             ctrl_dcause=c(1,4), cfgfile=file)#, MaxDeadPeak=80L)
+
+out <- rassembly_dyna(dyna_set)
+
+#if (Plot==1L) {
+  par(mfcol=c(3,1))
+  plot(1:dyna_set$par$B,out$spratio,type="l")
+  chkt <- cbind(cbind(1:dyna_set$par$B),cbind(t(out$nv[c(8,16,18,20,31),])))
+  matplot(chkt[,1],chkt[,2:6], type="l", col=1:5)
+  legend(0.8*dyna_set$par$B, 0.8*range(out$nv[c(8,16,18,20,31),])[2],
+         legend=dyna_set$splist[c(8,16,18,20,31)],col=1:5,lty=rep(1,5))
+
+  chkt <- cbind(cbind(1:dyna_set$par$B),cbind(t(out$nv[c(2,21),])))
+  matplot(chkt[,1],chkt[,2:3], type="l", col=1:2)
+  legend(0.8*dyna_set$par$B, 0.8*range(out$nv[c(2,21),])[2],
+         legend=dyna_set$splist[c(2,21)],col=1:2,lty=rep(1,2))
+#}
+
+```
+
