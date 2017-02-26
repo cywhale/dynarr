@@ -208,7 +208,7 @@ rassembly_preset <- function(sdl,varname=c("spcode","recruit","recruit_time","de
   Min_interN <- rassembly_param("Min_interN",ifelse(hasArg(Min_interN), Min_interN, NA), fcfg, 3L) ## at least N >= Min_interN, interaction will act, otherwise, ineraction on the sp is zero
   Min_interSP<- rassembly_param("Min_interSP",ifelse(hasArg(Min_interSP), Min_interSP, NA), fcfg, 2L) ## at least specise >= Min_interSP, interaction will act, otherwise, ineraction will stop
 
-  seed <- rassembly_param("seed",ifelse(hasArg(seed), seed, NA), fcfg, 123L) ## for reproducible results, you can change it anyway
+  seed <- rassembly_param("seed",ifelse(hasArg(seed), seed, NA), fcfg, NA) ## for reproducible results, you can change it anyway
   B <- rassembly_param("B",ifelse(hasArg(B), B, NA), fcfg, 1000L)
   CriticalLoss <- rassembly_param("CriticalLoss",ifelse(hasArg(CriticalLoss), CriticalLoss, NA), fcfg, 0.5)  ## Critical Loss rate of species number to check (0.5 is Half Loss)
   Nct <- rassembly_param("Nct",ifelse(hasArg(Nct), Nct, NA), fcfg, 0.5) ## negative compensatory effect #make mean not larger than 0.35 #see 01_monthly_birth_death.R

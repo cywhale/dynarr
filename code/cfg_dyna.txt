@@ -7,6 +7,5 @@ CriticalLoss	0.5	##Critical Loss rate of species number to check (0.5 is Half Lo
 Nct	0.50	##negative density-dependent effect, random choose (0-Nct) so, make mean intensity not larger than 0.5*Nct
 VarNDD_flag	1	##turn-off variety in density-denpendent deaths, fixed at Nct
 rare_chance	0.59	##give rare species more possibility to have a recruit or occationality of death > 0.5, so that round>0.5 -> integer 1
-seed	123	##random seeds, for reproducible results, you can change it anyway
 B	1000	##numbers of iterations
 
