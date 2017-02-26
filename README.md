@@ -11,6 +11,8 @@ A dynamic modelling for recruitment dynamics in regeneration processes of forest
 please refer my first project:
 <a href="https://cywhale.github.io/spat_struct_regen/">Local neighborhood communities in understory play a critical role affecting regeneration niches and subsequent community assembly in a montane cloud forest (2017)</a>
 
+<a href="https://github.com/cywhale/spat_struct_regen/tree/master/NanhsiDT">NanhsiDT package</a> (after version 0.2.4) is needed for testing datasets
+
 **About this site**
 
 1. code: Reproducible r codes, and some packages and functions used in related projects.
