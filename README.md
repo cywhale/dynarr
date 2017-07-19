@@ -4,7 +4,7 @@ A dynamic modelling for recruitment dynamics in regeneration processes of forest
 #### Still in progress, and paper ready for submitted...
 * Title: "Recruitment dynamics mediated by ungulate herbivory can affect species coexistence for tree seedling assemblages"
 * Authors: Chi-Yu Weng (cywhale)
-* Status: <a href="http://tai2.ntu.edu.tw/taiwania/abstract.php?type=abstract&id=1512">Weng, C., C. Hsieh, eta M. Su. 2017. Recruitment dynamics mediated by ungulate herbivory can affect species coexistence for tree seedling assemblages. Taiwania 62: 283–293.</a> (with full-text pdf)
+* Status: Weng, C-Y, C. Hsieh, and M. Su. 2017. Recruitment dynamics mediated by ungulate herbivory can affect species coexistence for tree seedling assemblages. Taiwania 62: 283–293. <a href="http://tai2.ntu.edu.tw/taiwania/abstract.php?type=abstract&id=1512">doi: 10.6165/tai.2017.62.283</a> (with full-text pdf)
 
 **Study area and forest vegetation**
 
